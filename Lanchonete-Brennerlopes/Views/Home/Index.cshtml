@@ -1,0 +1,26 @@
+﻿View: Views/Lanches/Index.cshtml
+@model List<LanchoneteMVC.Models.Lanche>
+@{
+	ViewBag.Title = "Cardápio";
+}
+<h2>Cardápio</h2>
+<p>
+	@Html.ActionLink("Adicionar Novo Lanche", "Create")
+</p>
+<table class="table">
+	<tr>
+		<th>Nome</th>
+		<th>Categoria</th>
+		<th>Preço</th>
+		<th>Descrição</th>
+	</tr>
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>@item.Nome</td>
+			<td>@item.Categoria</td>
+			<td>@item.Preco.ToString("C")</td>
+			<td>@item.Descricao</td>
+		</tr>
+	}
+</table>

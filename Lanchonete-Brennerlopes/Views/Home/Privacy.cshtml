@@ -1,0 +1,30 @@
+﻿View: Views/Lanches/Create.cshtml
+@model LanchoneteMVC.Models.Lanche
+@{
+ViewBag.Title = "Novo Lanche";
+}
+<h2>Novo Lanche</h2>
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+<div class="form-group">
+@Html.LabelFor(m => m.Nome)
+@Html.TextBoxFor(m => m.Nome, new { @class = "form-control" })
+@Html.ValidationMessageFor(m => m.Nome)
+	</div>
+	<div class="form-group">
+		@Html.LabelFor(m => m.Categoria)
+		@Html.TextBoxFor(m => m.Categoria, new { @class = "form-control" })
+		@Html.ValidationMessageFor(m => m.Categoria)
+	</div>
+	<div class="form-group">
+		@Html.LabelFor(m => m.Preco)
+		@Html.TextBoxFor(m => m.Preco, new { @class = "form-control" })
+		@Html.ValidationMessageFor(m => m.Preco)
+	</div>
+	<div class="form-group">
+		@Html.LabelFor(m => m.Descricao)
+		@Html.TextAreaFor(m => m.Descricao, new { @class = "form-control" })
+	</div>
+	<button type="submit" class="btn btn-primary">Salvar</button>
+}
